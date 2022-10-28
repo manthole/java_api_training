@@ -20,6 +20,7 @@ public class Launcher {
             @Override
             public void run() {
                 server.createContext("/ping", new CustomHandler());
+                server.createContext("/api/game/start", new CustomHandler());
                 server.start();
             }
         });
@@ -31,6 +32,9 @@ class CustomHandler implements HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
+        String requestMethod = exchange.getRequestMethod();
+        String query = exchange.getRequestURI().getQuery();
+
         String body = "OK";
         exchange.sendResponseHeaders(200, body.length());
         try (OutputStream os = exchange.getResponseBody()) { // (1)

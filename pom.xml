@@ -14,5 +14,6 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd"
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+
     </properties>
 </project>
